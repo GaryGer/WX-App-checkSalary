@@ -1,5 +1,7 @@
-{"navigationBarBackgroundColor": "#f8f8f8",
+{
+  "navigationBarBackgroundColor": "#f8f8f8",
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "咨询",
   "backgroundColor": "#ffffff",
-  "backgroundTextStyle": "light"}
+  "backgroundTextStyle": "light"
+}

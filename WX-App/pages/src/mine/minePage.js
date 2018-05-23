@@ -1,4 +1,6 @@
 // pages/src/mine/minePage.js
+
+const app = getApp()
 Page({
 
   /**
@@ -13,6 +15,24 @@ Page({
    */
   onLoad: function (options) {
   
+    if (app.globalData.userInfo) {
+      this.setData({
+        userNickName: app.globalData.userInfo.nickName,
+        userAvatarUrl: app.globalData.userInfo.avatarUrl
+      })
+    } else {
+      this.setData({
+        userNickName: '未授权',
+        userAvatarUrl: '../../sources/images/minePage/default.png'
+      })
+    }
+  },
+
+  headerViewTap:function(){
+    wx.showModal({
+      title: '提示',
+      content: '进入个人中心',
+    })
   },
 
   /**

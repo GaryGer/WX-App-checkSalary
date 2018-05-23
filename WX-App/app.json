@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/src/detail/detailPage",
+    
     "pages/index/index",
     "pages/index/login/login",
     "pages/src/home/homePage",
-    
-    "pages/src/advistory/advisoryPage",
-    "pages/src/mine/minePage"
+    "pages/src/detail/detailPage",
+    "pages/src/mine/minePage",
+    "pages/src/advistory/advisoryPage"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

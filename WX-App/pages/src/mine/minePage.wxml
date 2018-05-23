@@ -1,2 +1,10 @@
 <!--pages/src/mine/minePage.wxml-->
-<text>pages/src/mine/minePage.wxml</text>
+<view class='mineContainer'>
+  <view class='userHeaderView' bindtap='headerViewTap'>
+    <view class='userImgNameView'>
+      <image class='userHeaderImg' src="{{userAvatarUrl}}"></image>
+      <view class='userName'>{{userNickName}}</view>
+    </view>
+    <image class='rightImg' src='../../sources/images/minePage/right.png'></image>
+  </view>
+</view>
