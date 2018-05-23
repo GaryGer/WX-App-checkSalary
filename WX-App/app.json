@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/src/detail/detailPage",
+    "pages/index/index",
+    "pages/index/login/login",
+    "pages/src/home/homePage",
+    
+    "pages/src/advistory/advisoryPage",
+    "pages/src/mine/minePage"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "查工资CS",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "color": "#808080",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/src/home/homePage",
+        "text": "首页",
+        "iconPath": "pages/sources/images/tabBar-icon/首页normal.png",
+        "selectedIconPath": "pages/sources/images/tabBar-icon/首页.png"
+      },
+      {
+        "pagePath": "pages/src/detail/detailPage",
+        "text": "工资明细",
+        "iconPath": "pages/sources/images/tabBar-icon/详情normal.png",
+        "selectedIconPath": "pages/sources/images/tabBar-icon/详情.png"
+      },
+      {
+        "pagePath": "pages/src/advistory/advisoryPage",
+        "text": "咨询",
+        "iconPath": "pages/sources/images/tabBar-icon/客服normal.png",
+        "selectedIconPath": "pages/sources/images/tabBar-icon/客服.png"
+      },
+      {
+        "pagePath": "pages/src/mine/minePage",
+        "text": "我的",
+        "iconPath": "pages/sources/images/tabBar-icon/账户normal.png",
+        "selectedIconPath": "pages/sources/images/tabBar-icon/账户.png"
+      }
+    ]
+  }
+}

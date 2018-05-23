@@ -1,0 +1,49 @@
+<!--pages/src/home/homePage.wxml-->
+<view>
+  <!--当isUploadSalary == treu 显示工资详情  -->
+  <view class='{{isUploadSalary?"contentViewShow":"contentViewHide"}}'>
+    <view class="homeContainer">
+      <text class='title'>收入</text>
+      <view class="table">
+        <view class="tr">
+          <view class='th'>时间</view>
+          <view class="th" style='color:blue'>收入</view>
+        </view>
+        <view class="tr" wx:for="{{inComeModel}}" wx:for-index="id" wx:for-item="value" wx:key="key">
+          <view class='td'>{{value.time}}</view>
+          <view class="td" style='color:blue'>{{value.sum}}</view>
+        </view>
+      </view>
+
+      <!--以录入支出 并且通过接口获得时 显示支出组件  -->
+      <view class="homeContainer" style='width:100%' wx:if="{{expendModel.length > 0}}">
+          <text class='title'>支出</text>
+          <view class="table">
+            <view class="tr">
+              <view class='th'>时间</view>
+              <view class="th" style='color:red'>支出</view>
+            </view>
+            <view class="tr" wx:for="{{expendModel}}" wx:for-index="id" wx:for-item="value" wx:key="key">
+              <view class='td'>{{value.time}}</view>
+              <view class="td" style='color:red'>{{value.sum}}</view>
+            </view>
+          </view>
+        </view>
+        <!--未录入支出时 显示引导录入组件  -->
+        <view class="homeContainer" wx:else> 
+        <!-- TO DO... -->
+        <text class='title'>支出</text>
+        <text class='text'>抱歉！您还没有上传支出记录！养成记账好习惯，学会理财！</text>
+      <button class='button' size='mini' plain='true' loading="{{isLoading}}" bindtap='goAccounting'>去记账</button>
+        </view>
+    </view>
+  </view>
+  <!--当isUploadSalary == false 显示图片  -->
+  <view class='{{isUploadSalary?"contentViewHide":"contentViewShow"}}'>
+    <view class='imageViewContainer'>
+      <image class='image' src='../../sources/images/homePage/sorry.png'></image>
+      <text class='text'>抱歉！本月工资未发放，请联系财务人员！</text>
+      <button class='button' size='mini' plain='true' loading="{{isLoading}}" bindtap='checkLastMounthIncome'>查看上月工资</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/index/login/login.wxml-->
+<view class="loginContainer">
+  <image class="userInfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  <form bindsubmit='formSubmit'>
+    <view class="userInfo-nickNameView" style='margin-top: 100px'>
+      账户：
+      <input class="input" placeholder="请输入财务人员登记的手机号码" type='number' maxlength='11' name="phoneNumber"></input>
+    </view>
+    <view class="userInfo-nickNameView" style='margin-top: 5px'>
+      密码：
+      <input class="input" placeholder="请输入身份证后六位" password='true'  name="passWord"></input>
+    </view>
+    <view class='userInfo-nickNameView' style='margin-top: 20px'>
+      <button class='buttonText'>{{'忘记账号？'}}</button>
+      <button class='buttonText'>{{'忘记密码？'}}</button>
+    </view>
+    <button class='button' form-type='submit'>点击进入</button>
+  </form>
+
+</view>

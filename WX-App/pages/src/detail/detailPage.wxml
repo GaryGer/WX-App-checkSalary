@@ -1,0 +1,30 @@
+<view class='detailContainer'>
+  <!--loading  -->
+  <loading hidden="{{!loading}}">加载中...</loading>
+  <text class='textName'>Hi,{{userNickName}}</text>
+  <view class='detailTitleView'>
+    <view class='pickerView'>
+      <text class='text'>请选择查询日期：</text>
+      <view class='pickerDateView'>
+        <picker mode="date" value='{{date}}' start="1900-01-01" end="2999-12-30" bindchange='bindDateChange' fields="month">
+          <view>
+            {{date}}
+          </view>
+        </picker>
+        <image class='image' src='../../sources/images/detailPage/dateSelect.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='detail'>{{date}}工资详情如下：</view>
+
+  <view wx:for="{{salaryListBee}}" wx:for-index="id" wx:for-item="value" wx:key="key">
+    <view class='detail'>发放单位：{{value.company}}</view>
+    <view class='detail'>发放时间：{{value.date}}</view>
+    <view wx:for="{{value.detail}}" wx:for-index="id" wx:for-item="value" wx:key="key">
+      <view class='cell'>
+        <view class='content'>{{value.title}}</view>
+        <view class='content'>{{value.content}}</view>
+      </view>
+    </view>
+  </view>
+</view>
