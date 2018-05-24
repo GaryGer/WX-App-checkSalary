@@ -7,14 +7,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    minePageFuncList: [
+      { title: '记账本', imgUrl: '' },
+      { title: '开发票', imgUrl: '' },
+      { title: '报销进度', imgUrl: '' }]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
     if (app.globalData.userInfo) {
       this.setData({
         userNickName: app.globalData.userInfo.nickName,
@@ -28,59 +31,31 @@ Page({
     }
   },
 
-  headerViewTap:function(){
-    wx.showModal({
-      title: '提示',
-      content: '进入个人中心',
+  headerViewTap: function () {
+    var that = this;
+    that.navigationToVC('userCenter/userCenterPage');
+  },
+
+  cellDidSelected: function (e) {
+    var that = this;
+    console.log(e.currentTarget.dataset.index)
+    switch (e.currentTarget.dataset.index) {
+      case 0:
+        that.navigationToVC('pocketBook/pocketBookPage');
+        break;
+      case 1:
+        that.navigationToVC('invoicing/invoicingPage');
+        break;
+      case 2:
+        that.navigationToVC('wipeOutProgress/wipeOutProgressPage');
+        break;
+    }
+
+  },
+
+  navigationToVC: function (pointUrl) {
+    wx.navigateTo({
+      url: pointUrl
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
   }
 })

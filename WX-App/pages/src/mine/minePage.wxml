@@ -7,4 +7,22 @@
     </view>
     <image class='rightImg' src='../../sources/images/minePage/right.png'></image>
   </view>
+
+  <view wx:for="{{minePageFuncList}}" wx:key="key">
+
+    <view class='mineFuncView' wx:if="{{index==0}}" bindtap='cellDidSelected' data-index="{{index}}">
+      <view style='display:flex;align-items: center'>
+        <image class='functionImg' src='../../sources/images/minePage/{{item.title}}.png'></image>
+        <view style='margin-left:5px'>{{item.title}}</view>
+      </view>
+      <image class='cellRightImg' src='../../sources/images/minePage/right.png'></image>
+    </view>
+    <view class='mineFuncView' style='margin-top:2px' wx:if="{{index>0}}" bindtap='cellDidSelected' data-index="{{index}}">
+      <view style='display:flex;align-items: center'>
+        <image class='functionImg' src='../../sources/images/minePage/{{item.title}}.png'></image>
+        <view style='margin-left:5px'>{{item.title}}</view>
+      </view>
+      <image class='cellRightImg' src='../../sources/images/minePage/right.png'></image>
+    </view>
+  </view>
 </view>

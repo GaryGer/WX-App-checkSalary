@@ -1,0 +1,40 @@
+<!--pages/src/mine/userCenter/userCenterPage.wxml-->
+<view class='userCenterContainer'>
+  <!--头像item  -->
+  <view class='cellContainer' style='height:60px' bindtap='changeUserImage'>
+    <text class='titleText'>头像</text>
+    <image class='userAvatarImg' style='margin-left:auto' src='{{tempFilePaths}}'>
+    </image>
+    <image class='rightImg' src='../../../sources/images/minePage/right.png'>
+    </image>
+  </view>
+
+  <!--昵称  -->
+  <view class='cellContainer'>
+    <text class='titleText'>昵称</text>
+    <input class='input' style='margin-left:auto' value='{{userNickName}}' bindconfirm="bindConfirm"></input>
+    <image class='rightImg' src='../../../sources/images/minePage/right.png'>
+    </image>
+  </view>
+
+  <!--性别  -->
+  <view class='cellContainer'>
+    <text class='titleText'>性别</text>
+
+    <picker class='input' style='margin-left:auto;align-items: center;display:flex' bindchange='sexPickerChange' value='{{sexPickerIndex}}' range='{{sexTypeList}}'>
+      <input class='input' style='margin-left:auto' value='{{sexTypeList[sexPickerIndex]}}' disabled='false'></input>
+    </picker>
+    <image class='rightImg' src='../../../sources/images/minePage/right.png'>
+    </image>
+  </view>
+
+  <!--地区  -->
+  <view class='cellContainer'>
+    <text class='titleText'>地区</text>
+    <picker class='input' style='margin-left:auto;align-items: center;display:flex' bindchange='addressPickerChange' value='{{addressPickerIndex}}' range='{{addressTypeList}}'>
+      <input class='input' style='margin-left:auto' value='{{addressTypeList[addressPickerIndex]}}' disabled='false'></input>
+    </picker>
+    <image class='rightImg' src='../../../sources/images/minePage/right.png'>
+    </image>
+  </view>
+</view>

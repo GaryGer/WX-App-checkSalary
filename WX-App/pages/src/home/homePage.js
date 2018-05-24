@@ -14,7 +14,7 @@ Page({
     //   { time: '2018-06-15', sum: 500 }
     // ],
     expendModel: [],
-    isUploadSalary: true,
+    isUploadSalary: false,  //本月工资是否发放？
     isLoading: false
   },
 
@@ -33,7 +33,8 @@ Page({
     //模拟网络加载
     setTimeout(function () {
       that.setData({
-        isUploadSalary: true
+        isUploadSalary: true,
+        isLoading:false
       })
     }, 2500)
   },

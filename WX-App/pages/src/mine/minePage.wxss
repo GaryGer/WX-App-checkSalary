@@ -13,6 +13,29 @@
   display: flex;
   justify-content: space-between
 }
+.mineFuncView{
+  height: 44px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: beige;
+  margin-top: 30px;
+  display: flex;
+  font-size: 13px;
+}
+.functionImg{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-left: 15px;
+}
+.cellRightImg{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
 .userImgNameView{
   flex-direction: row;
   display: flex;

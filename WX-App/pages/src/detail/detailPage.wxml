@@ -17,12 +17,13 @@
   </view>
   <view class='detail'>{{date}}工资详情如下：</view>
 
-  <view wx:for="{{salaryListBee}}" wx:for-index="id" wx:for-item="value" wx:key="key">
-    <view class='detail'>发放单位：{{value.company}}</view>
-    <view class='detail'>发放时间：{{value.date}}</view>
-    <view wx:for="{{value.detail}}" wx:for-index="id" wx:for-item="value" wx:key="key">
+  <view wx:for="{{salaryListBee}}" wx:key="key">
+    <view class='detail'>发放单位：{{item.company}}</view>
+    <view class='detail'>发放时间：{{item.date}}</view>
+    <view wx:for="{{item.detail}}" wx:for-index="index" wx:for-item="value" wx:key="key">
       <view class='cell'>
         <view class='content'>{{value.title}}</view>
+
         <view class='content'>{{value.content}}</view>
       </view>
     </view>
