@@ -3,7 +3,7 @@
   <!--当isUploadSalary == true 显示工资详情  -->
   <view class='{{isUploadSalary?"contentViewShow":"contentViewHide"}}'>
     <view class="homeContainer">
-      <text class='title'>工资收入</text>
+      <text class='title'>本月工资收入</text>
       <view class="table">
         <view class="tr">
           <view class='th'>时间</view>
@@ -17,7 +17,7 @@
 
       <!--以录入支出 并且通过接口获得时 显示支出组件  -->
       <view class="homeContainer" style='width:100%' wx:if="{{expendModel.length > 0}}">
-        <text class='title'>日常支出</text>
+        <text class='title'>累计支出</text>
         <view class="table">
           <view class="tr">
             <view class='th'>时间</view>
@@ -32,7 +32,7 @@
       <!--未录入支出时 显示引导录入组件  -->
       <view class="homeContainer" wx:else>
         <!-- TO DO... -->
-        <text class='title'>支出</text>
+        <text class='title'>累计支出</text>
         <text class='text'>抱歉！您还没有上传支出记录！养成记账好习惯，学会理财！</text>
         <button class='button' size='mini' plain='true' loading="{{isLoading}}" bindtap='goAccounting'>去记账</button>
       </view>

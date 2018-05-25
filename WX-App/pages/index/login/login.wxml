@@ -11,8 +11,8 @@
       <input class="input" placeholder="请输入身份证后六位" password='true'  name="passWord"></input>
     </view>
     <view class='userInfo-nickNameView' style='margin-top: 20px'>
-      <button class='buttonText'>{{'忘记账号？'}}</button>
-      <button class='buttonText'>{{'忘记密码？'}}</button>
+      <button class='buttonText' bindtap='forgetButtonClick' data-type='phoneNum'>{{'忘记账号？'}}</button>
+      <button class='buttonText' bindtap='forgetButtonClick' data-type='passWord'>{{'忘记密码？'}}</button>
     </view>
     <button class='button' form-type='submit'>点击进入</button>
   </form>

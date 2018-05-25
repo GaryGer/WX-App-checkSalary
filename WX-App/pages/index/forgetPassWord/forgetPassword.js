@@ -1,36 +1,31 @@
-// pages/index/login/login.js
-//获取应用实例
-const app = getApp()
+// pages/index/forgetPassWord/forgetPassword.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
-    hasUserInfo: false
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    }
-  },
 
+  },
+  //
   formSubmit: function (e) {
-    var that = this;
     var warn = "";      //弹出框内容
     var flag = true;    //判断信息输入是否完整
     if (e.detail.value.phoneNumber == "") {
       warn = '请输入手机号码！';
     } else if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(e.detail.value.phoneNumber))) {
       warn = '请输入正确的手机号码！';
+    } else if (e.detail.value.userId == "") {
+      warn = '请输入身份证号码！';
+    } else if (!(/(^\d{15}$)|(^\d{17}([0-9]|X)$)/.test(e.detail.value.userId))) {
+      warn = '请输入正确的身份证号码！';
     } else if (e.detail.value.passWord == "") {
       warn = '请输入密码！';
     } else {
@@ -42,32 +37,14 @@ Page({
     }
 
     if (flag == true) {
-      that.showModalFromType(warn)
-    }
-  },
-  forgetButtonClick: function (e) {
-    var that = this;
-    switch (e.currentTarget.dataset.type) {
-      case 'phoneNum':
-        that.showModalFromType('请联系公司财务人员！')
-        break;
-      case 'passWord': 
-      wx.navigateTo({
-        url: '../forgetPassWord/forgetPassword',
+      wx.showModal({
+        title: '提示',
+        content: warn,
+        showCancel:false,
+        confirmText:'我知道了'
       })
-      break;
     }
   },
-
-  showModalFromType: function (type) {
-    wx.showModal({
-      title: '提示',
-      content: type,
-      showCancel:false,
-      confirmText:'我知道了',
-    })
-  },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

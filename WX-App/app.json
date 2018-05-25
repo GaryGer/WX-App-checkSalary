@@ -1,14 +1,16 @@
 {
   "pages": [
     
-    "pages/src/mine/userCenter/userCenterPage",
+    
     "pages/index/index",
+    "pages/index/forgetPassWord/forgetPassword",
     "pages/index/login/login",
+    
     "pages/src/home/homePage",
     "pages/src/detail/detailPage",
     "pages/src/mine/minePage",
     "pages/src/advistory/advisoryPage",
-   
+   "pages/src/mine/userCenter/userCenterPage",
     "pages/src/mine/pocketBook/pocketBookPage",
     "pages/src/mine/invoicing/invoicingPage",
     "pages/src/mine/wipeOutProgress/wipeOutProgressPage"
